@@ -6,4 +6,4 @@ COPY . .
 RUN pip install psutil
 
 ENTRYPOINT ["python"]
-CMD ["main.py"]
+CMD ["-u","main.py"]
