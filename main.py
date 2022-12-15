@@ -2,6 +2,7 @@
 
 #Uptime
 import psutil
+import time
 
 print(psutil.cpu_times())
 
@@ -18,7 +19,10 @@ def get_cpu_usage_pct():
  :returns: System CPU load as a percentage.
  :rtype: float
  """
+
  return psutil.cpu_percent(interval=0.5)
 
 # Output current CPU load as a percentage.
-print('System CPU load is {} %'.format(get_cpu_usage_pct()))
+while True:
+    print('System CPU load is {} %'.format(get_cpu_usage_pct()))
+    time.sleep(1)
