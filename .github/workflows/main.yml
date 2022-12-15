@@ -11,4 +11,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build and Run Docker
-      run: docker build -t Caliyo . && docker run -d Caliyo
+      run: docker build -t caliyo . && docker run -d caliyo
