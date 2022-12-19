@@ -3,6 +3,9 @@ import requests
 import json
 import psutil
 
+chat_id = "5839085506:AAGyxBqxfhHG_pG9kr2PCtKBE6J4SSXkBVc"
+api_key = "1560942074"
+
 # Telegram API (not entirely sure what this all does but it defines send_telegram_message so that we can use it
 def send_telegram_message(message: str,
                           chat_id: str,
@@ -47,8 +50,5 @@ while True:
 
     # Sleep for 5 seconds before checking again
     time.sleep(5)
-
-chat_id = "5839085506:AAGyxBqxfhHG_pG9kr2PCtKBE6J4SSXkBVc"
-api_key = "1560942074"
 
 send_telegram_message("Monitoring script is up and running is up and running", chat_id, api_key)
