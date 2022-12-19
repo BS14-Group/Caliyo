@@ -1,28 +1,20 @@
-# Code for the main requests for things we want to monitor
-
-#Uptime
-import psutil
 import time
+import telegram
+import psutil
 
-print(psutil.cpu_times())
+# Telegram API
+bot = telegram.Bot(token='5839085506:AAGyxBqxfhHG_pG9kr2PCtKBE6J4SSXkBVc')
 
-# physical cores of the cpu
-print("The number of physical cores in the system is %s" % (psutil.cpu_count(logical=False),))
+# Chat ID (This is so that we send it to the right chat as one API can have multiple chats)
+chat_id = 1560942074
 
-# logical cores of the cpu
-print("The number of logical cores in the system is %s" % (psutil.cpu_count(logical=True),))
-
-## Output current CPU load as a percentage
-def get_cpu_usage_pct():
- """
- Obtains the system's average CPU load as measured over a period of 500 milliseconds.
- :returns: System CPU load as a percentage.
- :rtype: float
- """
-
- return psutil.cpu_percent(interval=0.5)
-
-# Output current CPU load as a percentage.
 while True:
-    print('System CPU load is {} %'.format(get_cpu_usage_pct()))
-    time.sleep(1)
+    # Get the current CPU percentage
+    cpu_percentage = psutil.cpu_percent()
+
+    # If the CPU percentage is over 5%, send a notification
+    if cpu_percentage > 5.0:
+        bot.send_message(chat_id=chat_id, text='CPU percentage is over 5%! Current value: {}'.format(cpu_percentage))
+    
+    # Sleep for 10 Sec before checking again
+    time.sleep(10)
