@@ -40,7 +40,7 @@ while True:
 
         # If the CPU percentage is over 5%, send a notification
         if cpu_percentage > 5.0:
-            (send_telegram_message, text='CPU percentage is over 5%! Current value: {}'.format(cpu_percentage))
+            send_telegram_message(text='CPU percentage is over 5%! Current value: {}'.format(cpu_percentage))
     except Exception as e:
         # Print any exceptions that occur
         print(e)
