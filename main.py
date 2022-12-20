@@ -5,11 +5,13 @@ import telegram
 #chat_id = "1560942074"
 #api_key = "5839085506:AAGyxBqxfhHG_pG9kr2PCtKBE6J4SSXkBVc"
 
+# Defining what the token is for the telegram.Bot
 bot = telegram.Bot(token="5839085506:AAGyxBqxfhHG_pG9kr2PCtKBE6J4SSXkBVc")
 
 # Get the current CPU percentage
 cpu_percentage = psutil.cpu_percent()
 
+# Send notification to Telegram bot
 bot.sendMessage(chat_id=1560942074, text="System started CPU percentage: {}".format(cpu_percentage))
 
 while True:
