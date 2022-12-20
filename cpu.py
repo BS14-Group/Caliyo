@@ -18,7 +18,7 @@ def getRAMinfo():
         if i==2:
             return(line.split()[1:4])
 
-# Return % of CPU used by user as a character string                                
+# Return % of CPU utilization as a character string                                
 def getCPUuse():
     return(str(os.popen("top -n1 | awk '/Cpu\(s\):/ {print $2}'").readline().strip(\
 )))
