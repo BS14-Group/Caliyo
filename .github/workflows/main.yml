@@ -1,14 +1,23 @@
+# Name of GitHub Action
 name: deploy
 
+# Triggers for action to run
 on:
   push:
     branch:
       - main
 
+# Job to run
 jobs:
   build:
+    # This is our Raspberry-Pi that is being used for Github actions
     runs-on: self-hosted
+    # These are the steps that are being executed on the runnner
     steps:
+		# This step checks out the code in the repository to the self-hosted runner.
     - uses: actions/checkout@v2
+    
+		# Build and run Docker container
     - name: Build and Run Docker
       run: docker build -t caliyo . && docker run -d caliyo
+      # This step builds a Docker image with the name 'caliyo' using the Dockerfile in the current directory (That's what the period is for). The image is then run as a detached Docker container.
