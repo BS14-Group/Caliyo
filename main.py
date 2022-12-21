@@ -24,7 +24,7 @@ while True:
 
         # If the CPU percentage is over 10%, send a notification
         if cpu_percentage > 10.0:
-            bot.sendMessage(chat_id=1560942074, text="CPU percentage is over 10%! Current value: {}".format(cpu_percentage))
+            bot.sendMessage(chat_id=1560942074, text="Hi, CPU percentage is over 10%! Current value: {}".format(cpu_percentage))
             #the break can be removed if we want to continuously run the script
             break
 
