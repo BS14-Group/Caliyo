@@ -22,9 +22,9 @@ while True:
         # Print the CPU percentage
         print('System CPU load is {} %'.format(cpu_percentage))
 
-        # If the CPU percentage is over 10%, send a notification
-        if cpu_percentage > 10.0:
-            bot.sendMessage(chat_id=1560942074, text="Hi, CPU percentage is over 10%! Current value: {}".format(cpu_percentage))
+        # If the CPU percentage is over 60%, send a notification
+        if cpu_percentage > 60.0:
+            bot.sendMessage(chat_id=1560942074, text="Hi, CPU percentage is over 60%! Current value: {}".format(cpu_percentage))
             #the break can be removed if we want to continuously run the script
             break
 
